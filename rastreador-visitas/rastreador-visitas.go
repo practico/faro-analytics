@@ -23,7 +23,7 @@ var (
 	badgeGif     = mustReadFile("static/badge.gif")
 	badgeFlat    = mustReadFile("static/badge-flat.svg")
 	badgeFlatGif = mustReadFile("static/badge-flat.gif")
-	pageTemplate = template.Must(template.New("page").ParseFiles("ga-beacon/page.html"))
+	pageTemplate = template.Must(template.New("page").ParseFiles("rastreador-visitas/page.html"))
 )
 
 func init() {
@@ -97,7 +97,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	// / -> redirect
 	if len(params[0]) == 0 {
-		http.Redirect(w, r, "https://github.com/igrigorik/ga-beacon", http.StatusFound)
+		http.Redirect(w, r, "https://github.com/practico/rastreador-visitas", http.StatusFound)
 		return
 	}
 
