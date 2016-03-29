@@ -1,11 +1,13 @@
-# Faro para Analytics mediante AppEngine
+# Faro para simplificado para Google Analytics
 
 Cuando es imposible embeber el codigo JavaScript proporcionado por Google Analytics, esta aplicacion permite incrustar una simple imagen como pixel de seguimiento.
 
 
 ### Desplegando en AppEngine de Google
 
+1 - Clone este repositorio (haga un Fork)
 
+clone this repository, change the project name, and deploy your own instance - easy as that. The project is under MIT license.
 
 
 ### Uso del Faro
@@ -31,19 +33,15 @@ Si lo prefiere, puede utilizar un pixel transparente. Simplemente agregue `?pixe
 Agregando esa imagen podra rastrear en su panel de Google Analytics, incluso en tiempo real, las paginas donde sea incrustada.
 
 
-### FAQ
-
-- **How does this work?** Google Analytics provides a [measurement protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide) which allows us to POST arbitrary visit data directly to Google servers, and that's exactly what GA Beacon does: we include an image request on our pages which hits the GA Beacon service, and GA Beacon POSTs the visit data to Google Analytics to record the visit. As a result, if you can embed an image, you can beacon data to Google Analytics.
-
-- **Why do we need to proxy?** Google Analytics supports reporting of visit data [via GET requests](https://developers.google.com/analytics/devguides/collection/protocol/v1/reference#transport), but unfortunately we can't use that directly because we need to generate and report a unique visitor ID for each hit - e.g. some pages do not allow us to run JS on the client to generate the ID. To address this, we proxy the request through ga-beacon.appspot.com, which in turn is responsible for generating the unique visitor ID (server generated UUID), setting the appropriate cookies for repeat hits, and reporting the hits to Google Analytics.
-
-- **What about referrals and other visitor information?** Unfortunately the static tracking pixel approach limits the information we can collect about the visit. For example, referral information can't be passed to the tracking pixel because we can't execute JavaScript. As a result, the available metrics are restricted to unique visitors, pageviews, and the User-Agent and IP address of the visitor.
-
-- **Do I have to use ga-beacon.appspot.com?** You can if you want to - it's free, but there are no capacity or availability promises. For best results, deploy your own instance directly on Google App Engine: clone this repository, change the project name, and deploy your own instance - easy as that. The project is under MIT license.
+### Informacion adicional
 
 
 * [Using a Beacon Image for GitHub, Website and Email Analytics](http://www.sitepoint.com/using-beacon-image-github-website-email-analytics/)
 * [Tracking Google Sheet views with Google Analytics using GA Beacon](http://mashe.hawksey.info/2014/02/tracking-google-sheet-views-with-google-analytics/)
+
+
+* [Informacion del protocolo de medicion de Analytics para desarrolladores](https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide)
+
 
 
 
