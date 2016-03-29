@@ -1,38 +1,34 @@
-# Google Analytics Beacon [![Analytics](https://ga-beacon.appspot.com/UA-71196-10/ga-beacon/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+# Faro para Analytics mediante AppEngine
 
-Sometimes it is impossible to embed the JavaScript tracking code provided by Google Analytics: the host page does not allow arbitrary JavaScript, and there is no Google Analytics integration. However, not all is lost! **If you can embed a simple image (pixel tracker), then you can beacon data to Google Analytics.** For a great, hands-on explanation of how this works, check out the following guides:
+Cuando es imposible embeber el codigo JavaScript proporcionado por Google Analytics, esta aplicacion permite incrustar una simple imagen como pixel de seguimiento.
 
-* [Using a Beacon Image for GitHub, Website and Email Analytics](http://www.sitepoint.com/using-beacon-image-github-website-email-analytics/)
-* [Tracking Google Sheet views with Google Analytics using GA Beacon](http://mashe.hawksey.info/2014/02/tracking-google-sheet-views-with-google-analytics/)
 
-### Setup instructions
+### Desplegando en AppEngine de Google
 
-First, log in to your Google Analytics account and [set up a new property](https://support.google.com/analytics/answer/1042508?hl=en):
 
-* Select "Website", use new "Universal Analytics" tracking
-* **Website name:** anything you want (e.g. GitHub projects)
-* **WebSite URL: https://ga-beacon.appspot.com/**
-* Click "Get Tracking ID", copy the `UA-XXXXX-X` ID on next page
 
-Next, add a tracking image to the pages you want to track:
 
-* _https://ga-beacon.appspot.com/UA-XXXXX-X/insert/any/path_
-* `UA-XXXXX-X` should be your tracking ID
-* `insert/any/path` is an arbitrary path. For best results specify a meaningful and self-descriptive path. You have to do this manually, the beacon won't automatically record the page path it's embedded on.
+### Uso del Faro
 
-Example tracker markup if you are using Markdown:
+Ingrese a su cuenta Google Analytics y genere una nueva propiedad sobre la que desea hacer seguimiento (o busque una existente).
+
+* Haga clic en "Obtener ID de seguimiento", copie el valor de ID `UA-XXXXX-X`
+
+Ahora, agregue una imagen a las paginas que desea seguir:
+
+* _https://suaplicacion-rastreadora.appspot.com/UA-XXXXX-X/Cualquier/Ruta/Adicional_
+* `UA-XXXXX-X` corresponde al ID de seguimiento entregado por Analytics
+* `/Cualquier/Ruta/Adicional` es una ruta arbitraria autodescriptiva para usted y debe ser proporcionada de manera manual.
+
+Ejemplo para quienes usan Markdown:
 
 ```markdown
-[![Analytics](https://ga-beacon.appspot.com/UA-XXXXX-X/welcome-page)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://suaplicacion-rastreadora.appspot.com/UA-XXXXX-X/pagina-ejemplo)](https://github.com/practico/rastreador-visitas)
 ```
 
-Or RDoc:
+Si lo prefiere, puede utilizar un pixel transparente. Simplemente agregue `?pixel` a la URL de una imagen y eso es todo.
 
-```rdoc
-{<img src="https://ga-beacon.appspot.com/UA-XXXXX-X/welcome-page" />}[https://github.com/igrigorik/ga-beacon]
-```
-
-If you prefer, you can skip the badge and use a transparent pixel. To do so, simply append `?pixel` to the image URL. There are also "flat" style variants available, which are available when appending `?flat` or `?flat-gif` to the image URL. And that's it, add the tracker image to the pages you want to track and then head to your Google Analytics account to see real-time and aggregated visit analytics for your projects!
+Agregando esa imagen podra rastrear en su panel de Google Analytics, incluso en tiempo real, las paginas donde sea incrustada.
 
 
 ### FAQ
@@ -44,3 +40,47 @@ If you prefer, you can skip the badge and use a transparent pixel. To do so, sim
 - **What about referrals and other visitor information?** Unfortunately the static tracking pixel approach limits the information we can collect about the visit. For example, referral information can't be passed to the tracking pixel because we can't execute JavaScript. As a result, the available metrics are restricted to unique visitors, pageviews, and the User-Agent and IP address of the visitor.
 
 - **Do I have to use ga-beacon.appspot.com?** You can if you want to - it's free, but there are no capacity or availability promises. For best results, deploy your own instance directly on Google App Engine: clone this repository, change the project name, and deploy your own instance - easy as that. The project is under MIT license.
+
+
+* [Using a Beacon Image for GitHub, Website and Email Analytics](http://www.sitepoint.com/using-beacon-image-github-website-email-analytics/)
+* [Tracking Google Sheet views with Google Analytics using GA Beacon](http://mashe.hawksey.info/2014/02/tracking-google-sheet-views-with-google-analytics/)
+
+
+
+=====================================================================
+   Rastreador de Visitas (Faro para Analytics mediante AppEngine)
+   Copyright (C) 2016  John F. Arroyave Gutiérrez
+                       unix4you2@gmail.com
+                       www.practico.org
+========================================================================
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>
+                                      
+------------------------------------------------------------------------
+INSTALACION:
+
+
+
+	1) Haga un Fork a este repositorio
+	
+	2) En su computadora descargue el repo para ser actualizado
+
+
+------------------------------------------------------------------------
+## Desinstalación del rastreador:
+
+  * Elimine todos los llamados provenientes de su aplicacion hacia
+    el AppEngine.
+    
+  * Elimine la instancia sobre su AppEngine desde su panel GoogleCloud

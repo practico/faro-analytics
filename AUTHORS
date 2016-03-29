@@ -1,0 +1,16 @@
+=====================================================================
+   Rastreador de Visitas (Faro para Analytics mediante AppEngine)
+   Copyright (C) 2016  John F. Arroyave Gutiérrez
+                       unix4you2@gmail.com
+                       www.practico.org
+========================================================================
+
+Licensed under GPLv3 terms. See the LICENSE file for details
+That is the license for the whole package.
+
+------------------------------------------------------------------------
+Important: All source files in this project should be  UTF-8 Without BOM
+------------------------------------------------------------------------
+
+Este proyecto esta basado en el trabajo inicial de GA-Beacon de
+Copyright (c) 2014  Ilya Grigorik bajo licencia The MIT License (MIT)
