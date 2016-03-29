@@ -1,4 +1,4 @@
-application: rastreador-visitas
+application: nombre-del-proyecto
 version: 18
 runtime: go
 api_version: go1

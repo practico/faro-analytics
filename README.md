@@ -14,9 +14,9 @@ Cuando es imposible embeber el codigo JavaScript proporcionado por Google Analyt
  1. Clone este repositorio en su computadora (*si lo desea también puede hacer un Fork a su cuenta para guardar cualquier cambio en su aplicación rastreadora y clonarlo desde allí*)
  2. En caso de hacer un Fork, se recomienda que cambie el nombre del repositorio para que coincida con el nombre del proyecto creado en Google Cloud.
  3. Edite el archivo app.yaml cambiando el nombre de aplicación para que coincida con el ID del proyecto.
- 4. Cambie el nombre de la carpeta que contiene el rastreador de visitas para que coincida con el ID de proyecto.
- 5. Cambie el nombre del script Go del rastreador de visitas para que coincida con el ID del proyecto.
- 6. Edite el archivo page.html y el script Go del rastreador de visitas cambiando todos los valores de "rastreador-visitas" para que coincida con su ID de proyecto.
+ 4. Cambie el nombre de la carpeta que contiene el proyecto para que coincida con el ID de proyecto.
+ 5. Cambie el nombre del script Go para que coincida con el ID del proyecto.
+ 6. Edite el archivo page.html y el script Go cambiando todos los valores de "nombre-del-proyecto" para que coincida con su ID de proyecto.
 
 ### **PASO 3:** Desplegando la aplicación
  1. Vaya al directorio donde ha clonado el repositorio y ejecute **dev_appserver.py​ ​ ​nombre-del-proyecto** para probarlo.   Se supone que "nombre-del-proyecto" es la carpeta que contiene toad la aplicación clonada.  Si todo va bien en su consola verá que se genera un servidor web para ir a la aplicación y sus estadísticas.  Por ejemplo sobre http://localhost:8000
@@ -37,7 +37,7 @@ Ahora, agregue una imagen a las paginas que desea seguir:
 Ejemplo para quienes usan Markdown:
 
 ```markdown
-[![Analytics](https://nombre-del-proyecto.appspot.com/UA-XXXXX-X/pagina-ejemplo)](https://github.com/practico/rastreador-visitas)
+[![Analytics](https://nombre-del-proyecto.appspot.com/UA-XXXXX-X/pagina-ejemplo)](https://github.com/usuario/nombre-del-proyecto)
 ```
 
 Si lo prefiere, puede utilizar un pixel transparente. Simplemente agregue `?pixel` a la URL de una imagen y eso es todo.
