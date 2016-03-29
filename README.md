@@ -40,6 +40,11 @@ Ejemplo para quienes usan Markdown:
 [![Analytics](https://nombre-del-proyecto.appspot.com/UA-XXXXX-X/pagina-ejemplo)](https://github.com/usuario/nombre-del-proyecto)
 ```
 
+Ejemplo con una imagen:
+```
+	<img src="https://nombre-del-proyecto.appspot.com/UA-XXXXX-X/SuPath/Arbitrario?pixel" border=0 ALT=""/>
+```
+
 Si lo prefiere, puede utilizar un pixel transparente. Simplemente agregue `?pixel` a la URL de una imagen y eso es todo.
 
 Agregando esa imagen podra rastrear en su panel de Google Analytics, incluso en tiempo real, las paginas donde sea incrustada.
