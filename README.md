@@ -1,3 +1,8 @@
+Actualizaciones de este faro se hicieron hasta 2020-06-25.
+CAMBIOS POSTERIORES EN: https://gitlab.com/unix4you2/faroanalytics
+
+--------------
+
 #Faro simplificado para Google Analytics
 
 Cuando es imposible embeber el codigo JavaScript proporcionado por Google Analytics, esta aplicacion permite incrustar una simple imagen como pixel de seguimiento.
