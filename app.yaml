@@ -1,7 +1,6 @@
 application: nombre-del-proyecto
-version: 18
-runtime: go
-api_version: go1
+version: 20
+runtime: go113
 
 default_expiration: "1d"
 
